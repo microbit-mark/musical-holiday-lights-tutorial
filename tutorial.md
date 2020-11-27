@@ -1,50 +1,51 @@
-# tutorial
-# Micro:Bit & Phyphox ☀️⚡
-```package
-bluetooth
--radio
-```
-## Einführung @unplugged
+# Musical Holiday lights
 
-Lerne wie man den @boardname@ mit Phyphox via Bluetooth verknüpft und die Daten einer Photovoltaikzelle analysiert.
+## Step 1
 
-## Bluetooth aktivieren @fullscreen
+First you need to make your snowflakes. Take a ``||basic:show leds||`` block and place it our ``||basic:forever||`` loop.
 
-Klicke auf (+)  ``||advanced:extension:bluetooth||`` und füge Bluetooth dazu. Dabei musst du die Auswahl bestätigen, da der @boardname@ entweder per 
-Bluetooth statt Radio kommunizieren wird. 
-
-## Verbindungskontrolle  ✔️
-
-Um zu Kontrollieren, ob der @boardname@ verbunden ist, fügen wir einen ``||bluetooth:onBluetoothConnected||``
-melden mit einem Bild ``||basic:showIcon||`` das erfolgreiche Verbinden zurück.
-
-```blocks
-bluetooth.onBluetoothConnected(function () {
-    basic.showIcon(IconNames.Yes)
-})
-```
-
-## Verbindungskontrolle  ❌
-
-Look at the virtual @boardname@, you should see the heart and your drawing blink on the screen.
-```blocks
-bluetooth.onBluetoothDisconnected(function () {
-    basic.showIcon(IconNames.No)
-})
-```
-## Bluetoothservice starten
-
-```blocks
-bluetooth.startUartService()
-```
-## Daten senden 
-
-```blocks
+``` blocks
 basic.forever(function () {
-    bluetooth.uartWriteLine("")
+    basic.showLeds(`
+        . . . . .
+        . . # . .
+        . # # # .
+        . . # . .
+        . . . . .
+        `)
 })
 ```
 
-## Installieren auf dem @boardname@
+## Step 2
 
-Klicke auf ``||download||``, um dein Programm auf deinen @boardname@ zu übertragen!
+Brilliant. Now add a couple more snowflakes to the ``||basic:forever||`` loop to make an animation.
+    
+``` blocks
+basic.forever(function () {
+    basic.showLeds(`
+        . . . . .
+        . . # . .
+        . # # # .
+        . . # . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . # . .
+        . . # . .
+        # # . # #
+        . . # . .
+        . . # . .
+        `)
+    basic.showLeds(`
+        . # . # .
+        # # # # #
+        . # . # .
+        # # # # #
+        . # . # .
+        `)
+})
+```
+
+## Step 2
+
+Now you're ready to add some music!
