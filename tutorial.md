@@ -1,5 +1,11 @@
 # Musical Holiday lights
 
+```package
+devices
+bluetooth
+neopixel=github:microsoft/pxt-neopixel#v0.6.12
+```
+
 ## Step 1
 
 First you need to make your snowflakes. Take a ``||basic:show leds||`` block and place it our ``||basic:forever||`` loop.
